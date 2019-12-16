@@ -1,7 +1,7 @@
 import cv2
 def main():
     """ main function """
-    cap = cv2.VideoCapture(0) # get camera
+    cap = cv2.VideoCapture(0) # get camera (give it as path of video if you want to display video)
 
     fourcc = cv2.VideoWriter_fourcc(*'XVID') # video codec
 
