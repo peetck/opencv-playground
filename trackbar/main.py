@@ -28,7 +28,7 @@ def trackbar_example():
         img[:] = [b, g, r] # convert img color
 
         if cv2.getTrackbarPos("Switch", "Football") == 1: # if trackbar "Switch" value in "Football" window = 1
-            cv2.imshow("Football" , cv2.cvtColor(football, cv2.COLOR_BGR2GRAY)) # display football as black and white color
+            cv2.imshow("Football" , cv2.cvtColor(football, cv2.COLOR_BGR2GRAY)) # display football as gray scale
         else:
             cv2.imshow("Football" , football) # display football
 

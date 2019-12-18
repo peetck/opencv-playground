@@ -5,7 +5,7 @@ def show(value):
     """ On change function show """
     print(value) # display current value
 
-def object_detection_and_tracking():
+def object_detection_and_tracking_example():
     """ object_detection_and_tracking function """
     cv2.namedWindow("Tracking") # create window "Tracking"
     # camera = cv2.VideoCapture(0)
@@ -51,4 +51,4 @@ def object_detection_and_tracking():
             break # break the loop
     #camera.release()
     cv2.destroyAllWindows()
-object_detection_and_tracking()
+object_detection_and_tracking_example()
