@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-def main():
+def bitwise_example():
     img1 = np.zeros((250, 500, 3), np.uint8) # create black img
     img2 = cv2.imread("half_black_white.png", 1) # read half_black_white.png
 
@@ -17,4 +17,4 @@ def main():
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-main()
+bitwise_example()

@@ -1,6 +1,6 @@
 import cv2
-def main():
-    """ main function """
+def read_write_display_videos_example():
+    """ read_write_display_videos_example function """
     cap = cv2.VideoCapture(0) # get camera (give it as path of video if you want to display video)
 
     fourcc = cv2.VideoWriter_fourcc(*'XVID') # video codec
@@ -30,4 +30,4 @@ def main():
     cap.release() # release camera
     out.release() # release out
     cv2.destroyAllWindows() # close all windows
-main()
+read_write_display_videos_example()

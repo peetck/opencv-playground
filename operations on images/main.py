@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
-def main():
+def operations_on_images_example():
+    """ operations_on_images_example function """
     img = cv2.imread("football.jpg", 1) # read football.jpg img
     logo = cv2.imread("logo.png", 1) # read logo.png img
 
@@ -29,4 +30,4 @@ def main():
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-main()
+operations_on_images_example()

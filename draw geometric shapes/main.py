@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
-def main():
-    """ main function """
+def draw_geometric_shapes_example():
+    """ draw_geometric_shapes_example function """
     img = np.zeros([1914, 1080, 3], np.uint8) # create img with black bg (1914 x 1080)
 
     # draw line to img from (0, 0) to (255, 255) with red color (0, 0, 255) (B G R) and 5 thickness
@@ -28,4 +28,4 @@ def main():
     cv2.imshow("Image", img) # display img
     cv2.waitKey(0)
     cv2.destroyAllwindows()
-main()
+draw_geometric_shapes_example()
