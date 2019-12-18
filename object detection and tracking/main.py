@@ -8,6 +8,7 @@ def show(value):
 def object_detection_and_tracking():
     """ object_detection_and_tracking function """
     cv2.namedWindow("Tracking") # create window "Tracking"
+    # camera = cv2.VideoCapture(0)
 
     # add trackbar to Tracking window
     cv2.createTrackbar("Lower H", "Tracking", 0, 255, show)
@@ -27,6 +28,7 @@ def object_detection_and_tracking():
 
     while True:
         img = cv2.imread("ball.jpg", 1) # read ball.jpg
+        #_, img = camera.read()
         img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV) # convert img to hsv color and save it as img_hsv
 
         # get lower and upper color range from each trackbar and create to numpy array
@@ -47,5 +49,6 @@ def object_detection_and_tracking():
 
         if cv2.waitKey(1) & 0xFF == ord("q"): # if press "q"
             break # break the loop
+    #camera.release()
     cv2.destroyAllWindows()
 object_detection_and_tracking()
