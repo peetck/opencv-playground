@@ -14,14 +14,14 @@ def morphological_transformations_example():
     dilation = cv2.dilate(mask, kernal, iterations=2) # increase area of shape
     erosion = cv2.erode(mask, kernal, iterations=1) # erode shape
     opening = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernal) # applies erosion first follow by dilation
-    closing = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernal) # applies dilation first follow by erosion
+    closing = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernal) # applies dilation first follow by erosion
     mg = cv2.morphologyEx(mask, cv2.MORPH_GRADIENT, kernal) # difference between dilation and erosion of image
     th = cv2.morphologyEx(mask, cv2.MORPH_TOPHAT, kernal) # difference between the input image and opening
 
     dilation2 = cv2.dilate(img2, kernal, iterations=2)
     erosion2 = cv2.erode(img2, kernal, iterations=1)
     opening2 = cv2.morphologyEx(img2, cv2.MORPH_OPEN, kernal)
-    closing2 = cv2.morphologyEx(img2, cv2.MORPH_OPEN, kernal)
+    closing2 = cv2.morphologyEx(img2, cv2.MORPH_CLOSE, kernal)
     mg2 = cv2.morphologyEx(img2, cv2.MORPH_GRADIENT, kernal)
     th2 = cv2.morphologyEx(img2, cv2.MORPH_TOPHAT, kernal)
 
