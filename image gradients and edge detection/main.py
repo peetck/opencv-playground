@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plot
 
-def image_gradients_and_edge_detection():
-    """ image_gradients_and_edge_detection function """
+def image_gradients_and_edge_detection_example():
+    """ image_gradients_and_edge_detection_example function """
     img = cv2.imread("sudoku.png", 0) # read sudoku.png
 
     lap = cv2.Laplacian(img, cv2.CV_64F, ksize=3) # Laplace's method (kernal size = 3) use 64 bit float for support negative number we'll dealing with
@@ -28,4 +28,4 @@ def image_gradients_and_edge_detection():
         plot.yticks([])
 
     plot.show()
-image_gradients_and_edge_detection()
+image_gradients_and_edge_detection_example()
