@@ -20,10 +20,10 @@ def detect_simple_geometric_shapes_example():
     for contour in contours:
 
         # find number of corners of contour (True mean the contour is closed)
-        approx = cv2.approxPolyDP(contour, 0.01 * cv2.arcLength(contour, True), True)
+        approx = cv2.approxPolyDP(contour, 0.04 * cv2.arcLength(contour, True), True)
 
         # draw contour to result with pink color thickness 2
-        cv2.drawContours(result, [approx], -1, (255, 0, 255), 2)
+        cv2.drawContours(result, [contour], -1, (255, 0, 255), 2)
 
         x = approx.ravel()[0] # get the x pos
         y = approx.ravel()[1] # get the y pos
@@ -35,8 +35,17 @@ def detect_simple_geometric_shapes_example():
 
         elif len(approx) == 4: # if corners of contour == 4
 
-            # put msg Rectangle to result img
-            cv2.putText(result, "Rectangle", (x, y), cv2.FONT_HERSHEY_SIMPLEX, .3, (255, 255, 255), 1, cv2.LINE_AA)
+            x, y, w, h = cv2.boundingRect(contour) # get contour (x, y) position and width & height
+
+            if 1.05 >= float(w) / float(h) >= 0.95: # check if it's square or not
+                
+                # put msg Square to result img
+                cv2.putText(result, "Square", (x, y), cv2.FONT_HERSHEY_SIMPLEX, .3, (255, 255, 255), 1, cv2.LINE_AA)
+
+            else:
+
+                # put msg Rectangle to result img
+                cv2.putText(result, "Rectangle", (x, y), cv2.FONT_HERSHEY_SIMPLEX, .3, (255, 255, 255), 1, cv2.LINE_AA)
 
         elif len(approx) == 5: # if corners of contour == 5
 
