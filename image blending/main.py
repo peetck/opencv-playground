@@ -43,7 +43,7 @@ def image_blending_example():
 
     laplacian_apple = [apple_cpy] # create list of laplacian pyramid (apple)
     laplacian_orange = [orange_cpy] # create list of laplacian pyramid (orange)
-    
+
     for i in range(4, -1, -1):
         gaussian_expanded_apple = cv2.pyrUp(gaussian_apple[i + 1]) # pyramid up (gaussian apple)
         gaussian_expanded_orange = cv2.pyrUp(gaussian_orange[i + 1]) # pyramid up (gaussian orange)
@@ -51,7 +51,7 @@ def image_blending_example():
         # add it to laplacian list
         laplacian_apple.append(cv2.subtract(gaussian_apple[i], gaussian_expanded_apple))
         laplacian_orange.append(cv2.subtract(gaussian_orange[i], gaussian_expanded_orange))
-    
+
     # add left and right halves of images in each level
 
     apple_orange_py = [] # create apple orange pyramid list
