@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-def contours_example():
-    """ contours_example function """
+def find_and_draw_contours_example():
+    """ find_and_draw_contours_example function """
     img = cv2.imread("img.jpg") # read img.jpg
     #img = cv2.imread("logo.png") # read logo.png
 
@@ -25,4 +25,4 @@ def contours_example():
 
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-contours_example()
+find_and_draw_contours_example()
