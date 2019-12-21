@@ -38,14 +38,14 @@ def detect_simple_geometric_shapes_example():
             x, y, w, h = cv2.boundingRect(contour) # get contour (x, y) position and width & height
 
             if 1.05 >= float(w) / float(h) >= 0.95: # check if it's square or not
-                
+
                 # put msg Square to result img
                 cv2.putText(result, "Square", (x, y), cv2.FONT_HERSHEY_SIMPLEX, .3, (255, 255, 255), 1, cv2.LINE_AA)
 
             else:
 
                 # put msg Rectangle to result img
-                cv2.putText(result, "Rectangle", (x, y), cv2.FONT_HERSHEY_SIMPLEX, .3, (255, 255, 255), 1, cv2.LINE_AA)
+                cv2.putText(result, "Rectangle", (x, y + (h // 2)), cv2.FONT_HERSHEY_SIMPLEX, .3, (255, 255, 255), 1, cv2.LINE_AA)
 
         elif len(approx) == 5: # if corners of contour == 5
 
